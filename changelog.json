@@ -1,0 +1,22 @@
+[
+  {
+    "version": "1.0.0",
+    "date": "2026-06-02",
+    "title": "Initial release",
+    "description": "First public release of Theme Creator.",
+    "changes": {
+      "Added": [
+        "Full color picker for every CSS variable token across all groups (base, accent, status, syntax, ANSI, HTTP, VCS, editor, UI)",
+        "Live preview — apply your in-progress theme to the running Voiden app instantly",
+        "Restore button to revert to the saved theme while previewing",
+        "Import themes from .json files",
+        "Export any theme as a portable .json file",
+        "Auto-derives --accent-rgb and --accent-alt-rgb when an accent color is picked",
+        "Dark and Light base templates with sensible defaults",
+        "Resizable sidebar / editor split panel",
+        "Themes persisted as JSON files in userData/themes/",
+        "Status bar entry point (Themes button, right side) — opens or focuses the editor tab"
+      ]
+    }
+  }
+]
