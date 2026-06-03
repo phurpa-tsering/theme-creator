@@ -688,9 +688,14 @@ export default function ThemeEditorScreen() {
     const result = await pluginSaveTheme({ ...draft, id:finalId });
     setSaving(false);
     if (!result?.success) { setSaveError(result?.error ?? "Failed to save."); return; }
-    if (previewActive) setPreviewActive(false);
+    const wasPreviewActive = previewActive;
+    setPreviewActive(false);
     await loadThemes(finalId);
     setMode("list"); setSelectedId(finalId); setDraft(null);
+    if (wasPreviewActive) {
+      const s = await el?.userSettings?.get?.();
+      await loadThemeById(s?.appearance?.theme ?? "voiden", []);
+    }
   }
 
   async function handleCancel() {
@@ -776,7 +781,7 @@ export default function ThemeEditorScreen() {
                     <div style={{ display:"flex",alignItems:"center",gap:8 }}>
                       {previewActive && <span style={{ fontSize:12,color:"var(--fg-secondary)",fontStyle:"italic" }}>Preview active</span>}
                       <button onClick={previewActive?handleRestoreTheme:handlePreview} style={{ padding:"4px 10px",fontSize:12,border:"1px solid var(--border)",borderRadius:6,background:"none",cursor:"pointer",color:"var(--fg-primary)" }}>
-                        {previewActive?"Restore":"Preview"}
+                        {previewActive?"Restore":"Try Live"}
                       </button>
                       <button onClick={handleCancel} style={{ padding:4,border:"1px solid var(--border)",borderRadius:6,background:"none",cursor:"pointer",color:"var(--fg-secondary)",display:"flex" }}>
                         <X style={{ width:14,height:14 }} />

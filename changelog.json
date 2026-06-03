@@ -1,5 +1,20 @@
 [
   {
+    "version": "1.0.1",
+    "date": "2026-06-02",
+    "title": "Preview & save fixes",
+    "description": "Fixes the live preview not restoring the settings theme after saving, and renames the Preview button to Try Live.",
+    "changes": {
+      "Fixed": [
+        "After saving a new or edited theme with Try Live active, the app now correctly reverts to whichever theme was selected in settings instead of staying on the draft theme",
+        "If the theme being edited is the current settings theme, saving now reloads the freshly-saved version of that theme"
+      ],
+      "Changed": [
+        "Renamed the Preview button to Try Live for clarity — it applies the draft theme live to the running app, not just the mockup"
+      ]
+    }
+  },
+  {
     "version": "1.0.0",
     "date": "2026-06-02",
     "title": "Initial release",

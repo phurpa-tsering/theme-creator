@@ -25,8 +25,9 @@ Click the **Themes** button in the right side of the status bar to open the Them
 - Collapsible color sections keep the editor organized: Base, Accent, Status, Syntax
 
 ### Live Preview
-- Hit **Preview** while editing to instantly apply your in-progress theme to the running app
+- Hit **Try Live** while editing to instantly apply your in-progress theme to the running app
 - Hit **Restore** to revert back to your saved theme at any time
+- When you save, the app automatically reverts to whichever theme was active in your settings
 
 ### Theme Storage
 - Custom themes are saved as JSON files in your Voiden user data directory (`userData/themes/`)
